@@ -33,6 +33,10 @@ class SpringEmployeeTrackerApplicationTests {
 
 		Employee bob = new Employee("Bob", 30, 123, "bob@gmail.com", sales);
 		employeeRepository.save(bob);
+
+		Employee adrian = new Employee("Adrian", 36, 345, "adrian@adrian.com", sales);
+		employeeRepository.save(adrian);
+
 	}
 
 	@Test
@@ -42,11 +46,16 @@ class SpringEmployeeTrackerApplicationTests {
 
 		Employee bob = new Employee("Bob", 30, 123, "bob@gmail.com", sales);
 		employeeRepository.save(bob);
+		Employee adrian = new Employee("Adrian", 36, 345, "adrian@adrian.com", sales);
+		employeeRepository.save(adrian);
 
 		Project project1 = new Project("Sell a Car", 1);
 		projectRepository.save(project1);
 
 		project1.addEmployee(bob);
+		projectRepository.save(project1);
+
+		project1.addEmployee(adrian);
 		projectRepository.save(project1);
 
 	}
